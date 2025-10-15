@@ -36,7 +36,7 @@ RUN apt-get update \
 
 RUN apt-get update \
  && apt-get install --yes --no-install-recommends \
-        libcudnn9-cuda-12 \
+        libcudnn9-cuda-13 \
  && apt-get autoremove --yes --purge \
  && rm -rf /var/lib/apt/lists/*
 

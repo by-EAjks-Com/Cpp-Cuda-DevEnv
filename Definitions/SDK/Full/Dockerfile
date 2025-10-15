@@ -29,7 +29,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update \
  && apt-get install --yes --no-install-recommends \
         intel-hpckit-runtime \
-        intel-hpckit=2025.1.2-6 \
+        intel-hpckit=2025.2.1-40 \
  && apt-get autoremove --yes --purge \
  && rm -rf /var/lib/apt/lists/*
 
@@ -40,13 +40,13 @@ RUN apt-mark hold \
 
 RUN apt-get update \
  && apt-get install --yes --no-install-recommends \
-        libcudnn9-cuda-12 \
-        libcudnn9-dev-cuda-12=9.10.1.4-1 \
+        libcudnn9-cuda-13 \
+        libcudnn9-dev-cuda-13=9.14.0.64-1 \
  && apt-get autoremove --yes --purge \
  && rm -rf /var/lib/apt/lists/*
 
 RUN apt-mark hold \
-        libcudnn9-dev-cuda-12
+        libcudnn9-dev-cuda-13
 
 # Upgrade the image with the latest patches
 
